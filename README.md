@@ -20,13 +20,16 @@ Download Python at https://www.python.org/downloads/
 
 *Install Python*
 1. Run the installer
-2. Tick the box 
-3. Install now
+2. Tick the box "Add python.exe to PATH"
+
+![Alt text](image-1.png)
+
+3. Click "Install Now"
 
 
-4. Before closing > Diasble Path limit > close
-Disable path limit > close 
+4. Disable "Path length limit" > close
 
+![Alt text](image-2.png)
 
 *Open Python*
 
@@ -36,14 +39,22 @@ Disable path limit > close
 *Download Python at https://www.python.org/downloads/*
  
 *Install Python* 
-1. After accepting user agreement > Install 
-2. Double click on install.certificates.cmd > execute > close the terminal 
+1. After accepting user agreement > Install > close
 
+![Alt text](image-3.png)
 
+2. Double click on install.certificates.cmd 
+
+![Alt text](image-4.png)
+
+3. execute > close the terminal 
+
+![Alt text](image-5.png)
 
 *Open Python*
 1. Go on the launchpad > search for Terminal > open Terminal
 
+![Alt text](image-6.png)
 
 
 ### Linux
@@ -69,7 +80,7 @@ $ sudo dnf install python3
 $ sudo pacman -S python3
 ```
 
-
+## Python script
 
 ## Citation 
 These models are based on a pubblication. If you use it successfully for your research please be so kind to cite our work:
