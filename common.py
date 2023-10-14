@@ -124,3 +124,18 @@ def run_input_optimizer(train_dataset_file, test_dataset_file, input_cols, resul
         'min_score_cols': min_score_cols,
         'min_score_model': min_score_model
     }
+
+
+def calculate_accuracy(df):
+    tot_corr = 0
+    for index, row in df.iterrows():
+        if row["result"] == row["expected_result"]:
+            tot_corr += 1
+    tot = len(df)
+
+    accuracy_perc = (tot_corr / tot) * 100
+    return accuracy_perc
+
+
+def calculate_error_rate(df):
+    return 100 - calculate_accuracy(df)
