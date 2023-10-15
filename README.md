@@ -22,14 +22,14 @@ Download Python at https://www.python.org/downloads/
 1. Run the installer
 2. Tick the box "Add python.exe to PATH"
 
-![Alt text](image-1.png)
+![Alt text](Figures/image-1.png)
 
 3. Click "Install Now"
 
 
 4. Disable "Path length limit" > close
 
-![Alt text](image-2.png)
+![Alt text](Figures/image-2.png)
 
 *Open Python*
 
@@ -41,20 +41,20 @@ Download Python at https://www.python.org/downloads/
 *Install Python* 
 1. After accepting user agreement > Install > close
 
-![Alt text](image-3.png)
+![Alt text](Figures/image-3.png)
 
 2. Double click on install.certificates.cmd 
 
-![Alt text](image-4.png)
+![Alt text](Figures/image-4.png)
 
 3. execute > close the terminal 
 
-![Alt text](image-5.png)
+![Alt text](Figures/image-5.png)
 
 *Open Python*
 1. Go on the launchpad > search for Terminal > open Terminal
 
-![Alt text](image-6.png)
+![Alt text](Figures/image-6.png)
 
 
 ### Linux
