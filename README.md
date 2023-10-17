@@ -31,9 +31,15 @@ Download Python at https://www.python.org/downloads/
 
 ![Alt text](Figures/image-2.png)
 
-*Open Python*
+*Open terminal*
 
-1.
+1. Go on windows serach bar > search for cmd > open cmd
+
+*Install required dependecies*
+
+```
+pip install 
+```
 
 ### MacOS
 *Download Python at https://www.python.org/downloads/*
@@ -51,7 +57,7 @@ Download Python at https://www.python.org/downloads/
 
 ![Alt text](Figures/image-5.png)
 
-*Open Python*
+*Open Terminal*
 1. Go on the launchpad > search for Terminal > open Terminal
 
 ![Alt text](Figures/image-6.png)
