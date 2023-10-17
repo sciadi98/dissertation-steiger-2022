@@ -14,7 +14,7 @@ This document is a guide to use the the machine algorithms to predict serration 
 - Python 3 
 - JupyterLab (Jupyter Notebook not tested)
 
-## Before starting please download the .zip file at https://github.com/sciadi98/dissertation-steiger-2022/archive/refs/heads/main.zip 
+## Before starting please download the .zip file at https://github.com/sciadi98/dissertation-steiger-2022/archive/refs/heads/main.zip and unzipit
 
 
 ## Windows 10/11
@@ -59,10 +59,14 @@ Download Python at https://www.python.org/downloads/
 
 ![Alt text](Figures/image-5.png)
 
-*Open Terminal*
-1. Go on the launchpad > search for Terminal > open Terminal
+Open app
 
-![Alt text](Figures/image-6.png)
+right click app.command > open
+
+
+
+
+
 
 
 ## Linux
