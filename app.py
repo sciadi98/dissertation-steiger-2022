@@ -23,7 +23,7 @@ def load_model(model_file):
 def main():
     """Define the main function"""
     model_list = os.listdir(
-        "C:\\Users\\gstei\\Documents\\GitHub\\dissertation-steiger-2022\\models"
+        "models"
     )
     display_model_list(model_list)
     model_file = choose_model(model_list)
