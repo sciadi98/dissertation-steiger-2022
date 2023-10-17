@@ -33,15 +33,10 @@ Download Python at https://www.python.org/downloads/
 
 ![Alt text](Figures/image-2.png)
 
-*Open terminal*
+*Open app*
+1. Go in the unzipped dissertation-steiger-2022-main directory
+2. Double click on "SFT_analysis.bat" file
 
-1. Go on windows serach bar > search for cmd > open cmd
-
-*Install required dependecies*
-
-```
-pip install 
-```
 
 ## MacOS
 Download Python at https://www.python.org/downloads/
@@ -59,14 +54,9 @@ Download Python at https://www.python.org/downloads/
 
 ![Alt text](Figures/image-5.png)
 
-Open app
-
-right click app.command > open
-
-
-
-
-
+*Open app*
+1. Go in the unzipped dissertation-steiger-2022-main directory
+2. right click "SFT_analysis.command" file > open > open
 
 
 ## Linux
@@ -92,7 +82,7 @@ $ sudo dnf install python3
 $ sudo pacman -S python3
 ```
 
-## Python script
+
 
 ## Citation 
 These models are based on a pubblication. If you use it successfully for your research please be so kind to cite our work:
