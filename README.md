@@ -14,7 +14,7 @@ This document is a guide to use the the machine algorithms to predict serration 
 - Python 3 
 - JupyterLab (Jupyter Notebook not tested)
 
-## Before starting please download the .zip file at https://github.com/sciadi98/dissertation-steiger-2022/archive/refs/heads/main.zip and unzipit
+## Before starting please download the .zip file at https://github.com/sciadi98/dissertation-steiger-2022/archive/refs/heads/main.zip and unzip it
 
 
 ## Windows 10/11
@@ -82,6 +82,8 @@ $ sudo dnf install python3
 $ sudo pacman -S python3
 ```
 
+*Open app* 
+1. Open a terminal > execute "SFT_analysis"
 
 
 ## Citation 

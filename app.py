@@ -1,5 +1,5 @@
-import pickle
 import os
+import pickle
 
 
 def display_model_list(model_list):
