@@ -1,6 +1,6 @@
 import os
 import pickle
-
+import pandas as pd
 
 def display_model_list(model_list):
     """Show which models are available"""
@@ -19,6 +19,16 @@ def load_model(model_file):
     with open(model_file, "rb") as f:
         return pickle.load(f)
 
+def prepare_dataset(dataset_file, input_cols, result_col=None):
+    """Load a dataset and select the provided columns (w/ optional result column)."""
+    # Load data
+    df = pd.read_excel(dataset_file)
+
+    # Filter bad data, replace categories with dummies
+    x_df = df[input_cols].apply(lambda x: x.str.strip())
+    x = pd.get_dummies(x_df, drop_first=True)
+
+    return x
 
 def main():
     """Define the main function"""
