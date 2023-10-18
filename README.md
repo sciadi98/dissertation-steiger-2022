@@ -1,12 +1,13 @@
 # Sharp Force Trauma (SFT) models
 
 This document is a guide to use the the machine algorithms to predict serration and blade bevel using the following traits:
-- general morhology of the kerf shape
-- shape of the cross-profile (entrance and exit)
-- location of the rising profile (entrance and exit)
-- presence or absence of feathering
-- presence or absence of shards
-- location (entrance, center and exit) and general morphology of the mounding
+- **General morhology of the kerf shape:** Ellipse, D shape or Indeterminate
+- **Shape of the cross-profile (entrance and exit):** V shape or Y shape
+- **Location of the rising profile (entrance and exit):** single, bilateral or absent
+- **Presence or absence of feathering:** present or absent
+- **Presence or absence of shards:** present or absent
+- **Location (entrance, center and exit):** single, bilateral or absent
+- **General morphology of the mounding:** marked, not marked or absent
 
 
 ## Supported versions:
@@ -36,6 +37,16 @@ Download Python at https://www.python.org/downloads/
 *Open app*
 1. Go in the unzipped dissertation-steiger-2022-main directory
 2. Double click on "SFT_analysis.bat" file
+3. Follow the instructions on the terminal
+
+*Load the data*
+
+1. Use the template provided in the main directory
+-   Model 1: **Blade_bevel_optimized_template.xlsx**
+-   Model 2: **Blade_bevel_template.xlsx**
+-   Model 3: **Serration_optimized_template.xlsx**
+-   Model 4: **Serration_template.xlsx**
+2. The template can be fill with the following variables: E, D or I (shape);  V or |/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology)
 
 
 ## MacOS
@@ -58,6 +69,18 @@ Download Python at https://www.python.org/downloads/
 1. Go in the unzipped dissertation-steiger-2022-main directory
 2. right click "SFT_analysis.command" file > open > open
 
+![Alt text](Figures/image-8.png)
+![Alt text](Figures/image-7.png)
+
+*Load the data*
+
+1. Use the template provided in the main directory
+-   Model 1: **Blade_bevel_optimized_template.xlsx**
+-   Model 2: **Blade_bevel_template.xlsx**
+-   Model 3: **Serration_optimized_template.xlsx**
+-   Model 4: **Serration_template.xlsx**
+
+2. The template can be fill with the following variables: E, D or I (shape);  V or |/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology)
 
 ## Linux
 
@@ -85,8 +108,16 @@ $ sudo pacman -S python3
 *Open app* 
 1. Open a terminal > execute "SFT_analysis"
 
+*Load the data*
+
+1. Use the template provided in the main directory
+-   Model 1: **Blade_bevel_optimized_template.xlsx**
+-   Model 2: **Blade_bevel_template.xlsx**
+-   Model 3: **Serration_optimized_template.xlsx**
+-   Model 4: **Serration_template.xlsx**
+2. The template can be fill with the following variables: E, D or I (shape);  V or |/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology)
 
 ## Citation 
 These models are based on a pubblication. If you use it successfully for your research please be so kind to cite our work:
-
+## Contributing
 
