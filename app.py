@@ -64,7 +64,7 @@ def choose_dataset():
     # Loop until a valid value is found
     chosen_dataset = None
     while True:
-        chosen_dataset = input("What dataset do you want to use? ")
+        chosen_dataset = input("Enter the name/path of your dataset: ")
 
         # Error handling
         if not os.path.isfile(chosen_dataset):
@@ -101,10 +101,10 @@ def display_classification_summary(model_file, model_metadata, dataset_file, dat
     print(f"Model: {os.path.basename(model_file)}")
     print(f"Features: {', '.join(model_metadata['input_cols'])}")
     print(f"Dataset: {dataset_file}")
-    print(f"Dataset preview:\n{dataset.head()}")
+    print(f"Dataset preview:\n{dataset.head()}\n")
 
 
-def classify_and_print_result(model, dataset):
+def classify_and_print_result(model, dataset, result_conversion):
     # reorder columns according to model
     dataset = dataset[model.feature_names_in_]
 
@@ -114,7 +114,12 @@ def classify_and_print_result(model, dataset):
     # print(dataset.columns)
 
     result = model.predict(dataset)
-    print(result)
+    def convert_result (r: bool):
+        return result_conversion[str(r)]
+
+
+    converted_result = list(map(convert_result, result))
+    print(converted_result)
 
 
 def main():
@@ -136,7 +141,7 @@ def main():
 
     display_classification_summary(model_file, metadata, dataset_file, dataset)
 
-    classify_and_print_result(model, dataset)
+    classify_and_print_result(model, dataset, metadata["result_conversion"])
 
 
 # Call main function

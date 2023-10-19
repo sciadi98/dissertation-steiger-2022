@@ -39,14 +39,13 @@ Download Python at https://www.python.org/downloads/
 2. Double click on "SFT_analysis.bat" file
 3. Follow the instructions on the terminal
 
-*Load the data*
+*Prepare the data*
 
 1. Use the template provided in the main directory
--   Model 1: **Blade_bevel_optimized_template.xlsx**
--   Model 2: **Blade_bevel_template.xlsx**
--   Model 3: **Serration_optimized_template.xlsx**
--   Model 4: **Serration_template.xlsx**
-2. The template can be fill with the following variables: E, D or I (shape);  V or |/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology)
+2. The template can be fill with the following variables: E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology)
+
+> [!WARNING]  
+> It is imperative to put the file excel in the main directory "Dissertation_steiger_2022" otherwise the won't be loaded correctly.
 
 
 ## MacOS
@@ -72,16 +71,13 @@ Download Python at https://www.python.org/downloads/
 ![Alt text](Figures/image-8.png)
 ![Alt text](Figures/image-7.png)
 
-*Load the data*
+*Prepare the dataset*
 
 1. Use the template provided in the main directory
--   Model 1: **Blade_bevel_optimized_template.xlsx**
--   Model 2: **Blade_bevel_template.xlsx**
--   Model 3: **Serration_optimized_template.xlsx**
--   Model 4: **Serration_template.xlsx**
+2. The template can be fill with the following variables: E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology)
 
-2. The template can be fill with the following variables: E, D or I (shape);  V or |/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology)
-
+> [!WARNING]  
+> It is imperative to put the file excel in the main directory "Dissertation_steiger_2022" otherwise the won't be loaded correctly.
 ## Linux
 
 
@@ -108,14 +104,13 @@ $ sudo pacman -S python3
 *Open app* 
 1. Open a terminal > execute "SFT_analysis"
 
-*Load the data*
+*Prepare the dataset*
 
 1. Use the template provided in the main directory
--   Model 1: **Blade_bevel_optimized_template.xlsx**
--   Model 2: **Blade_bevel_template.xlsx**
--   Model 3: **Serration_optimized_template.xlsx**
--   Model 4: **Serration_template.xlsx**
-2. The template can be fill with the following variables: E, D or I (shape);  V or |/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology)
+2. The template can be fill with the following variables: E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology)
+
+> [!WARNING]  
+> It is imperative to put the file excel in the main directory "Dissertation_steiger_2022" otherwise the won't be loaded correctly.
 
 ## Citation 
 These models are based on a pubblication. If you use it successfully for your research please be so kind to cite our work:
