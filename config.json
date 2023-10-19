@@ -1,0 +1,55 @@
+{
+  "categories_for_cols": {
+    "shape": [
+      "D",
+      "indeterminate",
+      "E"
+    ],
+    "profile_entrance": [
+      "I/",
+      "V"
+    ],
+    "profile_exit": [
+      "I/",
+      "V"
+    ],
+    "rising_entrance": [
+      "absent",
+      "bilateral",
+      "single"
+    ],
+    "rising_exit": [
+      "absent",
+      "single",
+      "bilateral"
+    ],
+    "shards": [
+      "absent",
+      "present"
+    ],
+    "feathering": [
+      "absent",
+      "present"
+    ],
+    "entrance_mounding": [
+      "absent",
+      "single",
+      "bilateral"
+    ],
+    "center_mounding": [
+      "absent",
+      "single",
+      "bilateral"
+    ],
+    "exit_mounding": [
+      "absent",
+      "single",
+      "bilateral"
+    ],
+    "mounding": [
+      "absent",
+      "not marked",
+      "marked"
+    ]
+  }
+}

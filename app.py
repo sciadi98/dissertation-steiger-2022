@@ -4,31 +4,45 @@ import os
 import pickle
 import pandas as pd
 
-CATEGORIES_FOR_COLS = {
-    "shape": ["D", "indeterminate", "E"],
-    "profile_entrance": ["I/", "V"],
-    "profile_exit": ["I/", "V"],
-    "rising_entrance": ["absent", "bilateral", "single"],
-    "rising_exit": ["absent", "single", "bilateral"],
-    "shards": ["absent", "present"],
-    "feathering": ["absent", "present"],
-    "entrance_mounding": ["absent", "single", "bilateral"],
-    "center_mounding": ["absent", "single", "bilateral"],
-    "exit_mounding": ["absent", "single", "bilateral"],
-    "mounding": ["absent", "not marked", "marked"],
-}
+CONFIG_FILE = 'config.json'
+
+
+def load_config():
+    with open(CONFIG_FILE, "r") as f:
+        return json.load(f)
 
 
 def display_model_list(model_list):
     """Show which models are available"""
     for index, name in enumerate(model_list):
-        print(f"{index + 1}. {name}")
+        print(f"{index + 1}. {os.path.basename(name)}")
 
 
 def choose_model(model_list):
     """User can choose the model"""
-    choosen_index = input("What model do you want to use? ")
-    return model_list[int(choosen_index) - 1]
+
+    # Loop until a valid index is provided
+    chosen_index = None
+    while True:
+        chosen_index_str = input(f"What model do you want to use? [1-{len(model_list)}] ")
+
+        try:
+            chosen_index = int(chosen_index_str)
+        except ValueError:
+            print(f"Error: Invalid value provided, must be an integer between 1 and {len(model_list)}\n")
+            # Skip next check and loop
+            continue
+
+        if chosen_index < 1 or chosen_index > len(model_list):
+            print(f"Error: Invalid index provided, must be between 1 and {len(model_list)}\n")
+        else:
+            # Valid index was provided
+            break
+
+    chosen_model = model_list[chosen_index - 1]
+    print(f"Using model {os.path.basename(chosen_model)}\n")
+
+    return chosen_model
 
 
 def load_metadata(model_file):
@@ -39,12 +53,33 @@ def load_metadata(model_file):
 
 
 def load_model(model_file):
-    """Import the model choosen"""
+    """Import the model chosen"""
     with open(model_file, "rb") as f:
         return pickle.load(f)
 
 
-def prepare_dataset(dataset_file, input_cols):
+def choose_dataset():
+    """User can choose the dataset"""
+
+    # Loop until a valid value is found
+    chosen_dataset = None
+    while True:
+        chosen_dataset = input("What dataset do you want to use? ")
+
+        # Error handling
+        if not os.path.isfile(chosen_dataset):
+            print(f"Error: Provided file {chosen_dataset} does not exists, please provide a valid file path\n")
+        elif os.path.splitext(chosen_dataset)[1] != '.xlsx':
+            print(f"Error: Invalid file type provided, this script only supports Excel workbooks (.xlsx extension)\n")
+        else:
+            break
+
+    print(f"Using dataset {chosen_dataset}\n")
+
+    return chosen_dataset
+
+
+def prepare_dataset(dataset_file, input_cols, categories_for_cols):
     """Load a dataset and select the provided columns."""
 
     # Load data
@@ -55,14 +90,38 @@ def prepare_dataset(dataset_file, input_cols):
 
     # Convert df values to categorical to account for missing values
     for col in x_df.columns:
-        x_df[col] = df[col].astype(pd.CategoricalDtype(categories=CATEGORIES_FOR_COLS[col], ordered=True))
+        x_df[col] = df[col].astype(pd.CategoricalDtype(categories=categories_for_cols[col]))
 
     x = pd.get_dummies(x_df, drop_first=True, sparse=True)
     return x
 
 
+def display_classification_summary(model_file, model_metadata, dataset_file, dataset):
+    print("Classification summary:")
+    print(f"Model: {os.path.basename(model_file)}")
+    print(f"Features: {', '.join(model_metadata['input_cols'])}")
+    print(f"Dataset: {dataset_file}")
+    print(f"Dataset preview:\n{dataset.head()}")
+
+
+def classify_and_print_result(model, dataset):
+    # reorder columns according to model
+    dataset = dataset[model.feature_names_in_]
+
+    # print('Model features:')
+    # print(model.feature_names_in_)
+    # print('Dataset columns:')
+    # print(dataset.columns)
+
+    result = model.predict(dataset)
+    print(result)
+
+
 def main():
     """Define the main function"""
+
+    config = load_config()
+
     model_list = glob.glob("models/*.pickle")
     display_model_list(model_list)
 
@@ -70,20 +129,14 @@ def main():
 
     metadata = load_metadata(model_file)
     model = load_model(model_file)
-    choosen_dataset = input("What dataset do you want to use? ")
 
-    print(choosen_dataset)
-    dataset = prepare_dataset(choosen_dataset, metadata["input_cols"])
-    # reorder columns according to models
-    dataset = dataset[model.feature_names_in_]
+    dataset_file = choose_dataset()
 
-    print('Model features:')
-    print(model.feature_names_in_)
-    print('Dataset columns:')
-    print(dataset.columns)
+    dataset = prepare_dataset(dataset_file, metadata["input_cols"], config['categories_for_cols'])
 
-    result = model.predict(dataset)
-    print(result)
+    display_classification_summary(model_file, metadata, dataset_file, dataset)
+
+    classify_and_print_result(model, dataset)
 
 
 # Call main function
