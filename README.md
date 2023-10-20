@@ -25,12 +25,12 @@ Download Python at https://www.python.org/downloads/
 *Install Python*
 1. Run the installer
 
-![Alt text](Figures/image-1.png)
+![Alt text](figures/image-1.png)
 
 3. Click "Install Now"
 4. Disable "Path length limit" > close
 
-![Alt text](Figures/image-2.png)
+![Alt text](figures/image-2.png)
 
 *Open app*
 1. Go in the unzipped dissertation-steiger-2022-main directory
@@ -42,7 +42,7 @@ Download Python at https://www.python.org/downloads/
 1. Use the template provided in the main directory
 2. The template can be fill with the following variables (see example): E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general)
 
-![Alt text](Figures/Example_analysis.JPG)
+![Alt text](figures/Example_analysis.JPG)
 
 > [!WARNING]  
 > It is imperative to have the file excel in the main directory "Dissertation_steiger_2022" otherwise it won't be loaded correctly.
@@ -54,28 +54,28 @@ Download Python at https://www.python.org/downloads/
 *Install Python* 
 1. After accepting user agreement > Install > close
 
-![Alt text](Figures/image-3.png)
+![Alt text](figures/image-3.png)
 
 2. Double click on install.certificates.cmd 
 
-![Alt text](Figures/image-4.png)
+![Alt text](figures/image-4.png)
 
 3. execute > close the terminal 
 
-![Alt text](Figures/image-5.png)
+![Alt text](figures/image-5.png)
 
 *Open app*
 1. Go in the unzipped dissertation-steiger-2022-main directory
 2. right click "SFT_analysis.command" file > open > open
 
-![Alt text](Figures/image-8.png)
-![Alt text](Figures/image-7.png)
+![Alt text](figures/image-8.png)
+![Alt text](figures/image-7.png)
 
 *Prepare the dataset*
 
 1. Use the template provided in the main directory.
 2. The template can be fill with the following variables: E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology).
-![Alt text](Figures/Example_analysis.JPG)
+![Alt text](figures/Example_analysis.JPG)
 
 > [!WARNING]  
 > It is imperative to have the file excel in the main directory "Dissertation_steiger_2022" otherwise it won't be loaded correctly.
@@ -110,7 +110,7 @@ $ sudo pacman -S python3
 1. Use the template provided in the main directory.
 2. The template can be fill with the following variables: E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology).
 
-![Alt text](Figures/Example_analysis.JPG)
+![Alt text](figures/Example_analysis.JPG)
 > [!WARNING]  
 > It is imperative to have the file excel in the main directory "Dissertation_steiger_2022" otherwise it won't be loaded correctly.
 

@@ -1,14 +1,8 @@
 # Imports and global options
+import itertools
+
 import pandas as pd
-import numpy as np
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-import itertools
-import seaborn as sns
-import matplotlib.pyplot as plt
-import itertools
-import multiprocessing
-from functools import partial
 
 
 def prepare_dataset(dataset_file, input_cols, result_col=None):
