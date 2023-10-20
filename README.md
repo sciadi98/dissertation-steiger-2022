@@ -32,25 +32,32 @@ Download Python at https://www.python.org/downloads/
 
 ![Alt text](figures/image-2.png)
 
+*Install dependecies*
+
+1. Double click on "install.bat file"
+2. The install of the dependecies could require several seconds, wait until the terminal close itself
+
+**The installation steps must be executed only one time. If you move the main directory after the installation of the depndencies the app will stop working and it must be unistalled (delete main direcory) and re install it**
+
+### App
+
+*Prepare the data*
+1. Use the template provided in the main directory
+2. The template can be fill with the following variables (see example): E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general)
+
+> [!WARNING]  
+> It's imperative to have the file excel in the main directory "dissertation_steiger_2022" otherwise it won't be loaded correctly.
+
 *Open app*
 1. Go in the unzipped dissertation-steiger-2022-main directory
 2. Double click on "SFT_analysis.bat" file
 3. Follow the instructions on the terminal
 
-*Prepare the data*
-
-1. Use the template provided in the main directory
-2. The template can be fill with the following variables (see example): E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general)
-
-![Alt text](figures/Example_analysis.JPG)
-
-> [!WARNING]  
-> It is imperative to have the file excel in the main directory "Dissertation_steiger_2022" otherwise it won't be loaded correctly.
 
 
 ## MacOS
 Download Python at https://www.python.org/downloads/
- 
+### Installation 
 *Install Python* 
 1. After accepting user agreement > Install > close
 
@@ -64,24 +71,34 @@ Download Python at https://www.python.org/downloads/
 
 ![Alt text](figures/image-5.png)
 
+*Install dependecies*
+
+1. Right click "install.command" file > open > open (see example in section App > Open app)
+2. Wait until the session is finished, then close the terminal (the processe could take several seconds)
+
+**The installation steps must be executed only the first time. If you move the main directory after the installation of the depndencies the app will stop working and it must be unistalled (delete main direcory) and re install it**
+
+### App
+
+*Prepare the dataset*
+1. Use the template provided in the main directory
+2. The template can be fill with the following variables: E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology)
+
+> [!WARNING]  
+> It is imperative to have the file excel in the main directory "dissertation_steiger_2022" otherwise it won't be loaded correctly
+
 *Open app*
 1. Go in the unzipped dissertation-steiger-2022-main directory
-2. right click "SFT_analysis.command" file > open > open
+2. Right click "SFT_analysis.command" file > open > open
+3. Follow the instructions on the terminal
 
 ![Alt text](figures/image-8.png)
 ![Alt text](figures/image-7.png)
 
-*Prepare the dataset*
 
-1. Use the template provided in the main directory.
-2. The template can be fill with the following variables: E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology).
-![Alt text](figures/Example_analysis.JPG)
-
-> [!WARNING]  
-> It is imperative to have the file excel in the main directory "Dissertation_steiger_2022" otherwise it won't be loaded correctly.
 ## Linux
 
-
+### Installation
 #### Ubuntu or Debian derivatives
 
 ```
@@ -101,20 +118,24 @@ $ sudo dnf install python3
 ```
 $ sudo pacman -S python3
 ```
+*Install dependencies"
+1. Open a terminal and execute "install.sh"
+
+
+### App
+
+*Prepare the dataset*
+
+1. Use the template provided in the main directory
+2. The template can be fill with the following variables: E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology)
+
+> [!WARNING]  
+> It is imperative to have the file excel in the main directory "dissertation_steiger_2022" otherwise it won't be loaded correctly
+
 
 *Open app* 
 1. Open a terminal > execute "SFT_analysis"
 
-*Prepare the dataset*
 
-1. Use the template provided in the main directory.
-2. The template can be fill with the following variables: E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology).
 
-![Alt text](figures/Example_analysis.JPG)
-> [!WARNING]  
-> It is imperative to have the file excel in the main directory "Dissertation_steiger_2022" otherwise it won't be loaded correctly.
-
-## Citation 
-These models are based on a pubblication. If you use it successfully for your research please be so kind to cite our work:
-## Contributing
 
