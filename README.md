@@ -32,18 +32,18 @@ Download Python at https://www.python.org/downloads/
 
 ![Alt text](figures/image-2.png)
 
-*Install dependecies*
+*Install dependencies*
 
 1. Double click on "install.bat file"
-2. The install of the dependecies could require several seconds, wait until the terminal close itself
+2. The install of the dependecies could require several seconds, wait until the terminal closes itself
 
-**The installation steps must be executed only one time. If you move the main directory after the installation of the depndencies the app will stop working and it must be unistalled (delete main direcory) and re install it**
+**The installation steps must be executed only one time. If you move the main directory after the installation of the dependencies the app will stop working and it must be unistalled (delete main direcory) and re install it**
 
 ### App
 
 *Prepare the data*
 1. Use the template provided in the main directory
-2. The template can be fill with the following variables (see example): E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general)
+2. The template can be filled with the following variables (see example): E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general)
 
 > [!WARNING]  
 > It's imperative to have the file excel in the main directory "dissertation_steiger_2022" otherwise it won't be loaded correctly.
@@ -71,12 +71,12 @@ Download Python at https://www.python.org/downloads/
 
 ![Alt text](figures/image-5.png)
 
-*Install dependecies*
+*Install dependencies*
 
 1. Right click "install.command" file > open > open (see example in section App > Open app)
-2. Wait until the session is finished, then close the terminal (the processe could take several seconds)
+2. Wait until the session is finished, then close the terminal (the process could take several seconds)
 
-**The installation steps must be executed only the first time. If you move the main directory after the installation of the depndencies the app will stop working and it must be unistalled (delete main direcory) and re install it**
+**The installation steps must be executed only the first time. If you move the main directory after the installation of the dependencies the app will stop working and it must be unistalled (delete main direcory) and re install it**
 
 ### App
 
