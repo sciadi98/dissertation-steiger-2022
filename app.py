@@ -71,7 +71,7 @@ def choose_dataset():
     # Loop until a valid value is found
     chosen_dataset = None
     while True:
-        chosen_dataset = input("Enter the name/path of your dataset: ")
+        chosen_dataset = input("Enter the name/path of your dataset: ").strip()
 
         # Error handling
         if not os.path.isfile(chosen_dataset):
