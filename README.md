@@ -28,8 +28,6 @@ Download Python at https://www.python.org/downloads/
 ![Alt text](Figures/image-1.png)
 
 3. Click "Install Now"
-
-
 4. Disable "Path length limit" > close
 
 ![Alt text](Figures/image-2.png)
@@ -42,10 +40,12 @@ Download Python at https://www.python.org/downloads/
 *Prepare the data*
 
 1. Use the template provided in the main directory
-2. The template can be fill with the following variables: E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology)
+2. The template can be fill with the following variables (see example): E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general)
+
+![Alt text](Figures/Example_analysis.JPG)
 
 > [!WARNING]  
-> It is imperative to put the file excel in the main directory "Dissertation_steiger_2022" otherwise the won't be loaded correctly.
+> It is imperative to have the file excel in the main directory "Dissertation_steiger_2022" otherwise it won't be loaded correctly.
 
 
 ## MacOS
@@ -73,11 +73,12 @@ Download Python at https://www.python.org/downloads/
 
 *Prepare the dataset*
 
-1. Use the template provided in the main directory
-2. The template can be fill with the following variables: E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology)
+1. Use the template provided in the main directory.
+2. The template can be fill with the following variables: E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology).
+![Alt text](Figures/Example_analysis.JPG)
 
 > [!WARNING]  
-> It is imperative to put the file excel in the main directory "Dissertation_steiger_2022" otherwise the won't be loaded correctly.
+> It is imperative to have the file excel in the main directory "Dissertation_steiger_2022" otherwise it won't be loaded correctly.
 ## Linux
 
 
@@ -106,11 +107,12 @@ $ sudo pacman -S python3
 
 *Prepare the dataset*
 
-1. Use the template provided in the main directory
-2. The template can be fill with the following variables: E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology)
+1. Use the template provided in the main directory.
+2. The template can be fill with the following variables: E, D or I (shape);  V or I/ (profile shape); single, bilateral or absent (rising); present or absent (shards); present or absent (feathering); single, bilateral or absent (mounding location); marked, not marked or absent (mounding general morphology).
 
+![Alt text](Figures/Example_analysis.JPG)
 > [!WARNING]  
-> It is imperative to put the file excel in the main directory "Dissertation_steiger_2022" otherwise the won't be loaded correctly.
+> It is imperative to have the file excel in the main directory "Dissertation_steiger_2022" otherwise it won't be loaded correctly.
 
 ## Citation 
 These models are based on a pubblication. If you use it successfully for your research please be so kind to cite our work:

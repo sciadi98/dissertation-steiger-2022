@@ -3,8 +3,9 @@ import json
 import os
 import pickle
 import pandas as pd
+import time
 
-CONFIG_FILE = 'config.json'
+CONFIG_FILE = "config.json"
 
 
 def load_config():
@@ -24,17 +25,23 @@ def choose_model(model_list):
     # Loop until a valid index is provided
     chosen_index = None
     while True:
-        chosen_index_str = input(f"What model do you want to use? [1-{len(model_list)}] ")
+        chosen_index_str = input(
+            f"What model do you want to use? [1-{len(model_list)}] "
+        )
 
         try:
             chosen_index = int(chosen_index_str)
         except ValueError:
-            print(f"Error: Invalid value provided, must be an integer between 1 and {len(model_list)}\n")
+            print(
+                f"Error: Invalid value provided, must be an integer between 1 and {len(model_list)}\n"
+            )
             # Skip next check and loop
             continue
 
         if chosen_index < 1 or chosen_index > len(model_list):
-            print(f"Error: Invalid index provided, must be between 1 and {len(model_list)}\n")
+            print(
+                f"Error: Invalid index provided, must be between 1 and {len(model_list)}\n"
+            )
         else:
             # Valid index was provided
             break
@@ -68,9 +75,13 @@ def choose_dataset():
 
         # Error handling
         if not os.path.isfile(chosen_dataset):
-            print(f"Error: Provided file {chosen_dataset} does not exists, please provide a valid file path\n")
-        elif os.path.splitext(chosen_dataset)[1] != '.xlsx':
-            print(f"Error: Invalid file type provided, this script only supports Excel workbooks (.xlsx extension)\n")
+            print(
+                f"Error: Provided file {chosen_dataset} does not exists, please provide a valid file path\n"
+            )
+        elif os.path.splitext(chosen_dataset)[1] != ".xlsx":
+            print(
+                f"Error: Invalid file type provided, this script only supports Excel workbooks (.xlsx extension)\n"
+            )
         else:
             break
 
@@ -90,21 +101,25 @@ def prepare_dataset(dataset_file, input_cols, categories_for_cols):
 
     # Convert df values to categorical to account for missing values
     for col in x_df.columns:
-        x_df[col] = df[col].astype(pd.CategoricalDtype(categories=categories_for_cols[col]))
+        x_df[col] = df[col].astype(
+            pd.CategoricalDtype(categories=categories_for_cols[col])
+        )
 
     x = pd.get_dummies(x_df, drop_first=True, sparse=True)
-    return x
+    return x, df
 
 
-def display_classification_summary(model_file, model_metadata, dataset_file, dataset):
+def display_classification_summary(
+    model_file, model_metadata, dataset_file, dataset, raw_dataset
+):
     print("Classification summary:")
     print(f"Model: {os.path.basename(model_file)}")
     print(f"Features: {', '.join(model_metadata['input_cols'])}")
     print(f"Dataset: {dataset_file}")
-    print(f"Dataset preview:\n{dataset.head()}\n")
+    print(f"Dataset preview:\n{raw_dataset.head()}\n")
 
 
-def classify_and_print_result(model, dataset, result_conversion):
+def classify(model, dataset, result_conversion, raw_dataset):
     # reorder columns according to model
     dataset = dataset[model.feature_names_in_]
 
@@ -114,12 +129,26 @@ def classify_and_print_result(model, dataset, result_conversion):
     # print(dataset.columns)
 
     result = model.predict(dataset)
-    def convert_result (r: bool):
+
+    def convert_result(r: bool):
         return result_conversion[str(r)]
 
-
     converted_result = list(map(convert_result, result))
-    print(converted_result)
+    return converted_result
+
+
+def print_and_save_report(raw_df, converted_result):
+    label = raw_df["label"]
+    data = {"label": label, "result": converted_result}
+    final_df = pd.DataFrame(data)
+
+    print("Classification report: ")
+    print(str(final_df) + "\n")
+
+    timestamp = int(time.time())
+    report_file = f"results/{timestamp}_report.xlsx"
+    final_df.to_excel(excel_writer= report_file, na_rep="NA", index = False)
+    print(f"The report is saved in {report_file}")
 
 
 def main():
@@ -137,11 +166,19 @@ def main():
 
     dataset_file = choose_dataset()
 
-    dataset = prepare_dataset(dataset_file, metadata["input_cols"], config['categories_for_cols'])
+    dataset, raw_dataset = prepare_dataset(
+        dataset_file, metadata["input_cols"], config["categories_for_cols"]
+    )
 
-    display_classification_summary(model_file, metadata, dataset_file, dataset)
+    display_classification_summary(
+        model_file, metadata, dataset_file, dataset, raw_dataset
+    )
 
-    classify_and_print_result(model, dataset, metadata["result_conversion"])
+    converted_result = classify(
+        model, dataset, metadata["result_conversion"], raw_dataset
+    )
+
+    print_and_save_report(raw_dataset, converted_result)
 
 
 # Call main function
