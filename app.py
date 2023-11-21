@@ -71,7 +71,7 @@ def choose_dataset():
     # Loop until a valid value is found
     chosen_dataset = None
     while True:
-        chosen_dataset = input("Enter the name/path of your dataset: [*.xlsx] ").strip()
+        chosen_dataset = input("Enter the name/path of your dataset [Example: SFT_analysis_template.xlsx]:  ").strip()
 
         # Error handling
         if not os.path.isfile(chosen_dataset):
