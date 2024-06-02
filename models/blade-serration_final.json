@@ -3,8 +3,12 @@
         "shape",
         "profile_entrance",
         "rising_entrance",
+        "rising_exit",
         "shards",
-        "mounding"
+        "feathering",
+        "entrance_mounding",
+        "center_mounding",
+        "exit_mounding"
     ],
     "result_conversion": {
         "True": "Serrated blade",

@@ -1,11 +1,15 @@
 {
     "input_cols": [
         "shape",
-        "profile_exit",
+        "profile_entrance",
         "rising_entrance",
+        "rising_exit",
         "shards",
+        "feathering",
+        "entrance_mounding",
+        "center_mounding",
         "exit_mounding"
-    ],
+            ],
     "result_conversion": {
         "True": "Single beveled blade",
         "False": "Double beveled blade"
