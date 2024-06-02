@@ -5,8 +5,9 @@
       <excludeFolder url="file://$MODULE_DIR$/.ipynb_checkpoints" />
       <excludeFolder url="file://$MODULE_DIR$/DATA" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/newvenv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.11 (dissertation-steiger-2022)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (dissertation-steiger-2022)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">

@@ -1,5 +1,6 @@
 # Imports and global options
 import itertools
+from collections import OrderedDict
 
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
@@ -39,17 +40,22 @@ def check_input_data_indices(train_dataset_file, test_dataset_file, input_cols):
     print('Datasets are compatible')
 
 
-def train_model(train_dataset_file, input_cols, result_col):
+def train_model(train_dataset_file, input_cols, result_col, random_state = 0):
     """Create a logistic regression model on the provided dataset (including an expected result column) and fits/trains it on the result column."""
     x, y = prepare_dataset(train_dataset_file, input_cols, result_col)
 
     # Instantiate the model
-    model = LogisticRegression(solver='liblinear', random_state=0)
+    model = LogisticRegression(solver='liblinear', random_state = random_state)
+
 
     # Train (=fit) the model
     model.fit(x, y)
 
     return model
+
+
+
+
 
 
 def evaluate_model(model, test_dataset_file, input_cols, result_col):
@@ -133,3 +139,78 @@ def calculate_accuracy(df):
 
 def calculate_error_rate(df):
     return 100 - calculate_accuracy(df)
+
+
+
+
+
+
+
+def evaluate_overfitting(train_dataset_file, test_dataset_file, input_combination, result_col):
+
+    model = train_model(
+        train_dataset_file,
+        list(input_combination),
+        result_col
+    )
+    score_validation = evaluate_model(
+        model,
+        test_dataset_file,
+        list(input_combination),
+        result_col
+    )
+    score_train = evaluate_model(
+        model,
+        train_dataset_file,
+        list(input_combination),
+        result_col
+    )
+
+    accuracy_loss = score_train - score_validation
+
+
+
+
+
+    # print(score)
+    return model, score_validation, score_train, accuracy_loss
+
+
+def run_input_optimizer_2(train_dataset_file, test_dataset_file, input_cols, result_col):
+    """Finds the best and worst combination of columns and their corresponding scores by brute force (by trying all
+    the combinations)."""
+
+    # Contains all combinations by input length (3D list)
+    input_combinations = []
+    for l in range(5, len(input_cols) + 1):
+        input_combinations.append(list(itertools.combinations(input_cols, l)))
+
+
+    models = []
+    scores_validation = []
+    scores_train = []
+    accuracies_loss = []
+    flat_input_combinations = []
+    results = {}
+    for input_combinations_of_len in input_combinations:
+        print('Testing combinations of length ' + str(len(input_combinations_of_len[0])))
+
+        for input_combination in input_combinations_of_len:
+            model, score_validation, score_train, accuracy_loss = evaluate_overfitting(train_dataset_file, test_dataset_file, input_combination,
+                                                         result_col)
+            results[input_combination] = accuracy_loss
+
+            # models.append(model)
+            # scores_validation.append(score_validation)
+            # scores_train.append(score_train)
+            # accuracies_loss.append(accuracy_loss)
+            # flat_input_combinations.append(input_combination)
+
+    filtered_dict = {k: v for k, v in results.items() if v > 0}
+    best_scores = sorted(filtered_dict.items(), key=lambda x: x[1])[:3]
+
+    # Pick and print results
+
+    return best_scores
+
+
